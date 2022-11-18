@@ -24,9 +24,7 @@ public class PracticeBoxTest {
         $x("//input[@id='firstName']").setValue("Jovan");
         $x("//input[@id='lastName']").setValue("Savovich");
         $x("//input[@id='userEmail']").setValue("kgb@jovan.ru");
-    // не понял как делается следующий пункт, подсмотрел у других, прошу разъяснить:
         $x("//label[text()='Other']").click();
-        // Далее я попытался сделать все заполнение формы через setbyvalue но последний пункт не получился.
         $("[id=userNumber]").setValue("4999886645");
         $("[id=dateOfBirthInput]").click();
         $(".react-datepicker__year-select").selectOptionByValue("2001");
