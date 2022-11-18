@@ -12,14 +12,14 @@ import static java.awt.SystemColor.control;
 
 public class PracticeBoxTest {
     @BeforeAll
-    static void BeforeAll() {
+    static void beforeall() {
         Configuration.holdBrowserOpen = true;
         Configuration.browserSize = "1920x1080";
        // Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";
     }
 @Test
-    void Practicefillformtest() {
+    void practicefillformtest() {
         open("/automation-practice-form");
         $x("//input[@id='firstName']").setValue("Jovan");
         $x("//input[@id='lastName']").setValue("Savovich");
