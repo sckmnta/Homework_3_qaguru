@@ -8,8 +8,12 @@ repositories {
 
 dependencies {
     testImplementation (
-            "com.codeborne:selenide:6.9.0",
-            "org.junit.jupiter:junit-jupiter:5.8.2")
+            "com.codeborne:selenide:6.3.5",
+            "org.junit.jupiter:junit-jupiter:5.9.1",
+            "org.slf4j:slf4j-simple:2.0.6"
+
+
+    )
 }
 
 tasks.withType(JavaCompile) {
@@ -18,18 +22,4 @@ tasks.withType(JavaCompile) {
 
 test {
     useJUnitPlatform()
-}
-
-help {
-    doFirst {
-        println ""
-        println "************************************************************************ "
-        println "***                                                                  *** "
-        println "*** Welcome to https://github.com/sckmnta/Homework_3_qaguru.git      *** "
-        println "***                                                                  *** "
-        println "*** ./gradlew help                                                   *** "
-        println "***                                                                  *** "
-        println "************************************************************************ "
-        println ""
-    }
 }
