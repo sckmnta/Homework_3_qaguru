@@ -20,7 +20,7 @@ public class JunitTest {
         System.out.println("Method @Beforeeach");
     }
     @AfterEach
-    void beforeEach(){
+    void afterEach(){
         System.out.println("Method @Aftereach");
     }
 
