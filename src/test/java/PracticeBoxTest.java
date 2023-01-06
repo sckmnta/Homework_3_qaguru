@@ -1,20 +1,26 @@
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Configuration.browser;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeBoxTest {
     @BeforeAll
     static void beforeall() {
         Configuration.holdBrowserOpen = true;
-        //bConfiguration.browser = "opera";
+        //Configuration.browser = "opera";
         Configuration.browserSize = "1920x1080";
         // Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";
+    }
+    @AfterAll
+    static void afterAll(){
+        Configuration.holdBrowserOpen = false;
     }
 @Test
     void practicefillformtest() {
