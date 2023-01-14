@@ -10,6 +10,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeBoxWithObjectsTest {
+    RegistrationPage registrationPage = new RegistrationPage();
     @BeforeAll
     static void beforeall() {
         Configuration.holdBrowserOpen = true;
@@ -27,16 +28,16 @@ public class PracticeBoxWithObjectsTest {
 
 
         /// strings
-        String firstName = "Jovan";
+        //String firstName = "Jovan";
         String lastName = "Savovich";
         String userMail = "kgb@jovan.ru";
         String userNumber = "4999886645";
         String currentAddress = "Leprosorium";
         ///open form
-    new RegistrationPage().openPage();
+    registrationPage.openPage();
         ///fill form
         //$x("//input['#firstName']").setValue(firstName);
-    new RegistrationPage().setFirstName(firstName);
+    registrationPage.setFirstName();
         $x("//input[@id='lastName']").setValue(lastName);
         $x("//input[@id='userEmail']").setValue(userMail);
         $x("//label[text()='Other']").click();
