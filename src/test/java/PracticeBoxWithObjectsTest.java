@@ -32,12 +32,11 @@ public class PracticeBoxWithObjectsTest {
         String userMail = "kgb@jovan.ru";
         String userNumber = "4999886645";
         String currentAddress = "Leprosorium";
-
         ///open form
-
     new RegistrationPage().openPage();
         ///fill form
-        $x("//input['#firstName']").setValue(firstName);
+        //$x("//input['#firstName']").setValue(firstName);
+    new RegistrationPage().setFirstName(firstName);
         $x("//input[@id='lastName']").setValue(lastName);
         $x("//input[@id='userEmail']").setValue(userMail);
         $x("//label[text()='Other']").click();

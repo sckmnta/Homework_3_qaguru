@@ -1,7 +1,6 @@
 package pages;
 
-import static com.codeborne.selenide.Selenide.executeJavaScript;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     public void openPage() {
@@ -11,6 +10,8 @@ public class RegistrationPage {
     }
 
     public void setFirstName(String value) {
+        $x("//input['#firstName']").setValue(value);
 
     }
+
 }
