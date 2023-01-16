@@ -39,8 +39,7 @@ public class PracticeBoxWithObjectsTest {
     registrationPage.setFirstName(firstName);
     registrationPage.setLastName(lastName);
     registrationPage.setMail(userMail);
-        $x("//label[text()='Other']").click();
-        //$("#userNumber").setValue(userNumber);
+    registrationPage.setGender();
     registrationPage.setPhone(userNumber);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOptionByValue("2001");
@@ -52,7 +51,7 @@ public class PracticeBoxWithObjectsTest {
         $x("//label[text()='Reading']").click();
         $x("//input[@id='uploadPicture']").uploadFile(new File("src/test/resources/exmpl.jpg"));
     //$("#uploadPicture").uploadFile(new File("src/test/resources/exmpl.jpg")); как вариант
-    $("#currentAddress").setValue(currentAddress);
+    registrationPage.setAdress(currentAddress);
     $("#react-select-3-input").setValue("Rajasthan").pressEnter();
     $("#react-select-4-input").setValue("Jaipur").pressEnter();
     /// hide overlay banners

@@ -9,13 +9,15 @@ public class RegistrationPage {
     firstNameInput = $x("//input[@id='firstName']"),
     lastNameInput = $x("//input[@id='lastName']"),
     mailInput = $x("//input[@id='userEmail']"),
-    numberInput = $("#userNumber");
+    numberInput = $("#userNumber"),
+    adressInput = $("#currentAddress"),
+    genderInput =  $x("//label[text()='Other']");
 
-
-    public void openPage() {
+    public RegistrationPage openPage() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
+        return this;
     }
 
     public void setFirstName(String value) {
@@ -30,6 +32,12 @@ public class RegistrationPage {
     public void setPhone(String value) {
         numberInput.setValue(value);
         }
+    public void setAdress(String value) {
+        adressInput.setValue(value);
+    }
+    public void setGender() {
+        genderInput.click();
+    }
 
 }
 
