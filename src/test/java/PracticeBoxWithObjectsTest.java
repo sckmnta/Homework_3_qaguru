@@ -35,8 +35,9 @@ public class PracticeBoxWithObjectsTest {
         String currentAddress = "Leprosorium";
         ///open form
     registrationPage.openPage();
-        ///fill form
-    registrationPage.setFirstName(firstName);
+    ///
+    .setFirstName(firstName);
+    //registrationPage.setFirstName(firstName);
     registrationPage.setLastName(lastName);
     registrationPage.setMail(userMail);
     registrationPage.setGender();

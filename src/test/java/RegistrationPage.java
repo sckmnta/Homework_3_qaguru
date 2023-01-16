@@ -20,23 +20,29 @@ public class RegistrationPage {
         return this;
     }
 
-    public void setFirstName(String value) {
+    public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
+        return this;
     }
-    public void setLastName(String value) {
+    public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
+        return this;
     }
-    public void setMail(String value) {
+    public RegistrationPage setMail(String value) {
         mailInput.setValue(value);
+        return this;
     }
-    public void setPhone(String value) {
+    public RegistrationPage setPhone(String value) {
         numberInput.setValue(value);
+        return this;
         }
-    public void setAdress(String value) {
+    public RegistrationPage setAdress(String value) {
         adressInput.setValue(value);
+        return this;
     }
-    public void setGender() {
+    public RegistrationPage setGender() {
         genderInput.click();
+        return this;
     }
 
 }
