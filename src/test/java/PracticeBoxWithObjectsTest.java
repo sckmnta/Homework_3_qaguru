@@ -4,10 +4,9 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeBoxWithObjectsTest extends TestBase {
+
 @Test
     void practicefillformtest() {
-
-
         /// strings
         String firstName = "Jovan";
         String lastName = "Savovich";
@@ -17,32 +16,35 @@ public class PracticeBoxWithObjectsTest extends TestBase {
         ///open form
     registrationPage.openPage()
     ///fill form
-                    .setFirstName(firstName)
-                    .setFirstName(firstName)
-                    .setLastName(lastName)
-                    .setMail(userMail)
-                    .setGender()
-                    .setPhone(userNumber)
-                            .setBirthDate("18", "December", "2001");
-        //$("#dateOfBirthInput").click();
-        //$(".react-datepicker__year-select").selectOptionByValue("2001");
-        //$(".react-datepicker__month-select").selectOptionByValue("11");
-        //$("#dateOfBirthInput").click();
-        $("#subjectsInput").setValue("Computer Science").pressEnter();
-        $("#subjectsInput").setValue("Economics").pressEnter();
-        $x("//label[text()='Reading']").click();
-        $x("//input[@id='uploadPicture']").uploadFile(new File("src/test/resources/exmpl.jpg"));
-    //$("#uploadPicture").uploadFile(new File("src/test/resources/exmpl.jpg")); как вариант
+                            .setFirstName(firstName)
+                            .setFirstName(firstName)
+                            .setLastName(lastName)
+                            .setMail(userMail)
+                            .setGender()
+                            .setPhone(userNumber)
+                            .setBirthDate("18", "December", "2001")
+                            .setSecondSubject("Economics")
+                            .setHobby("Reading")
+                            .setPicture()
+                            .setAdress(currentAddress)
+                            .setState("Rajasthan")
+                            .setCity("Jaipur")
+                            .clickSubmit();
     registrationPage.setAdress(currentAddress);
-    $("#react-select-3-input").setValue("Rajasthan").pressEnter();
-    $("#react-select-4-input").setValue("Jaipur").pressEnter();
     /// hide overlay banners
-
     $(".btn-primary").click();
     /// Ура, а теперь выдача
-    $(".table-responsive").shouldHave(text(firstName), text(lastName), text(userMail), text("Other"), text(userNumber),
-            text("18 December,2001"), text("Economics"), text("Computer Science"), text("Reading"), text("exmpl.jpg"), text(currentAddress),
-            text("Rajasthan Jaipur"));
+    registrationPage.verifyModal()
+            .verifyResult("Student Name",  firstName + " Savovich")
+            .verifyResult("Student Email", userMail)
+            .verifyResult("Gender", "Other")
+            .verifyResult("Mobile", userNumber)
+            .verifyResult("Date of Birth", "18 December,2001")
+            .verifyResult("Subjects", "Economics")
+            .verifyResult("Hobbies", "Reading")
+            .verifyResult("Picture", "exmpl.jpg")
+            .verifyResult("Address", currentAddress)
+            .verifyResult("State and City", "Rajasthan Jaipur");
 }
 
 }
