@@ -1,10 +1,12 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import pages.Components.CalendarComponent;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
+    CalendarComponent calendarComponent = new CalendarComponent();
     private SelenideElement
     firstNameInput = $x("//input[@id='firstName']"),
     lastNameInput = $x("//input[@id='lastName']"),
@@ -42,6 +44,11 @@ public class RegistrationPage {
     }
     public RegistrationPage setGender() {
         genderInput.click();
+        return this;
+    }
+    public RegistrationPage setBirthDate(String day, String month, String year) {
+        $("#dateOfBirthInput").click();
+        calendarComponent.setDate(day, month, year);
         return this;
     }
 

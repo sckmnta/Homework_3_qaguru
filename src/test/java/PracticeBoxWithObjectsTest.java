@@ -1,28 +1,9 @@
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import pages.RegistrationPage;
-
 import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PracticeBoxWithObjectsTest {
-    RegistrationPage registrationPage = new RegistrationPage();
-    @BeforeAll
-    static void beforeall() {
-        Configuration.holdBrowserOpen = true;
-        //Configuration.browser = "opera";
-        Configuration.browserSize = "1920x1080";
-        // Configuration.startMaximized = true;
-        Configuration.baseUrl = "https://demoqa.com";
-    }
-    @AfterAll
-    static void afterAll(){
-        Configuration.holdBrowserOpen = false;
-    }
+public class PracticeBoxWithObjectsTest extends TestBase {
 @Test
     void practicefillformtest() {
 
@@ -34,19 +15,19 @@ public class PracticeBoxWithObjectsTest {
         String userNumber = "4999886645";
         String currentAddress = "Leprosorium";
         ///open form
-    registrationPage.openPage();
-    ///
-    .setFirstName(firstName);
-    //registrationPage.setFirstName(firstName);
-    registrationPage.setLastName(lastName);
-    registrationPage.setMail(userMail);
-    registrationPage.setGender();
-    registrationPage.setPhone(userNumber);
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__year-select").selectOptionByValue("2001");
-        $(".react-datepicker__month-select").selectOptionByValue("11");
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__day--018").click();
+    registrationPage.openPage()
+    ///fill form
+                    .setFirstName(firstName)
+                    .setFirstName(firstName)
+                    .setLastName(lastName)
+                    .setMail(userMail)
+                    .setGender()
+                    .setPhone(userNumber)
+                            .setBirthDate("18", "December", "2001");
+        //$("#dateOfBirthInput").click();
+        //$(".react-datepicker__year-select").selectOptionByValue("2001");
+        //$(".react-datepicker__month-select").selectOptionByValue("11");
+        //$("#dateOfBirthInput").click();
         $("#subjectsInput").setValue("Computer Science").pressEnter();
         $("#subjectsInput").setValue("Economics").pressEnter();
         $x("//label[text()='Reading']").click();
