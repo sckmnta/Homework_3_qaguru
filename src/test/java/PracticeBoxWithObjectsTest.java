@@ -36,15 +36,12 @@ public class PracticeBoxWithObjectsTest {
         ///open form
     registrationPage.openPage();
         ///fill form
-        //$x("//input['#firstName']").setValue(firstName);
     registrationPage.setFirstName(firstName);
-        //$x("//input[@id='lastName']").setValue(lastName);
     registrationPage.setLastName(lastName);
-        //$x("//input[@id='userEmail']").setValue(userMail);
     registrationPage.setMail(userMail);
         $x("//label[text()='Other']").click();
-        // Далее я попытался сделать все заполнение формы через setbyvalue но последний пункт не получился.
-        $("#userNumber").setValue(userNumber);
+        //$("#userNumber").setValue(userNumber);
+    registrationPage.setPhone(userNumber);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOptionByValue("2001");
         $(".react-datepicker__month-select").selectOptionByValue("11");

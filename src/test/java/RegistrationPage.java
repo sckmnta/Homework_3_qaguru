@@ -8,7 +8,8 @@ public class RegistrationPage {
     private SelenideElement
     firstNameInput = $x("//input[@id='firstName']"),
     lastNameInput = $x("//input[@id='lastName']"),
-    mailInput = $x("//input[@id='userEmail']");
+    mailInput = $x("//input[@id='userEmail']"),
+    numberInput = $("#userNumber");
 
 
     public void openPage() {
@@ -26,4 +27,9 @@ public class RegistrationPage {
     public void setMail(String value) {
         mailInput.setValue(value);
     }
+    public void setPhone(String value) {
+        numberInput.setValue(value);
+        }
+
 }
+
