@@ -28,7 +28,7 @@ public class PracticeBoxWithObjectsTest {
 
 
         /// strings
-        //String firstName = "Jovan";
+        String firstName = "Jovan";
         String lastName = "Savovich";
         String userMail = "kgb@jovan.ru";
         String userNumber = "4999886645";
@@ -37,9 +37,11 @@ public class PracticeBoxWithObjectsTest {
     registrationPage.openPage();
         ///fill form
         //$x("//input['#firstName']").setValue(firstName);
-    registrationPage.setFirstName();
-        $x("//input[@id='lastName']").setValue(lastName);
-        $x("//input[@id='userEmail']").setValue(userMail);
+    registrationPage.setFirstName(firstName);
+        //$x("//input[@id='lastName']").setValue(lastName);
+    registrationPage.setLastName(lastName);
+        //$x("//input[@id='userEmail']").setValue(userMail);
+    registrationPage.setMail(userMail);
         $x("//label[text()='Other']").click();
         // Далее я попытался сделать все заполнение формы через setbyvalue но последний пункт не получился.
         $("#userNumber").setValue(userNumber);

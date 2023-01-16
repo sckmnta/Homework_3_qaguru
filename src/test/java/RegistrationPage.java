@@ -6,14 +6,11 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     private SelenideElement
-    firstNameInput = $x("//input[@id='lastName']");
+    firstNameInput = $x("//input[@id='firstName']"),
+    lastNameInput = $x("//input[@id='lastName']"),
+    mailInput = $x("//input[@id='userEmail']");
 
-    private final
-    String firstName = "Jovan",
-            lastName = "Savovich",
-            userMail = "kgb@jovan.ru",
-            userNumber = "4999886645",
-            currentAddress = "Leprosorium";
+
     public void openPage() {
         open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
@@ -21,8 +18,12 @@ public class RegistrationPage {
     }
 
     public void setFirstName(String value) {
-        firstNameInput.setValue(firstName);
-
+        firstNameInput.setValue(value);
     }
-
+    public void setLastName(String value) {
+        lastNameInput.setValue(value);
+    }
+    public void setMail(String value) {
+        mailInput.setValue(value);
+    }
 }
