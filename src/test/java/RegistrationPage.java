@@ -1,14 +1,10 @@
 package pages;
-
 import com.codeborne.selenide.SelenideElement;
 import pages.Components.CalendarComponent;
 import pages.components.RegistrationModal;
-
 import java.io.File;
-
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     RegistrationModal registrationModal = new RegistrationModal();
@@ -86,7 +82,7 @@ public class RegistrationPage {
         return this;
     }
     public RegistrationPage setHobby(String value) {
-        hobbiesInput.$(byText(value)).click(); //setValue(value).click(); не работает, прошу объяснить
+        hobbiesInput.$(byText(value)).click(); //setValue(value).click(); не работает почему то):
         return this;
     }
     public RegistrationPage setPicture() {
