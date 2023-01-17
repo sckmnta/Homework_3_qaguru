@@ -32,7 +32,6 @@ public class PracticeBoxWithObjectsTest extends TestBase {
                             .clickSubmit();
     registrationPage.setAdress(currentAddress);
     /// hide overlay banners
-    $(".btn-primary").click();
     /// Ура, а теперь выдача
     registrationPage.verifyModal()
             .verifyResult("Student Name",  firstName + " Savovich")
