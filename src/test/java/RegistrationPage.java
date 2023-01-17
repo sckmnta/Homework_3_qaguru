@@ -6,6 +6,7 @@ import pages.components.RegistrationModal;
 
 import java.io.File;
 
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
@@ -20,7 +21,7 @@ public class RegistrationPage {
             genderInput = $x("//label[text()='Other']"),
             dateOfBirthInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
-            hobbiesInput = $x("//label[text()='Reading']"),
+            hobbiesInput =  $("#hobbiesWrapper"), //$x("//label[text()='Reading']"), не работает почему то):
             uploadPicture =   $x("//input[@id='uploadPicture']"),
             stateInput = $("#react-select-3-input"),
             cityInput = $("#react-select-4-input"),
@@ -85,7 +86,7 @@ public class RegistrationPage {
         return this;
     }
     public RegistrationPage setHobby(String value) {
-        hobbiesInput.setValue(value).click();
+        hobbiesInput.$(byText(value)).click(); //setValue(value).click(); не работает, прошу объяснить
         return this;
     }
     public RegistrationPage setPicture() {
