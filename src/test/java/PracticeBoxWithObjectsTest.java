@@ -7,15 +7,14 @@ public class PracticeBoxWithObjectsTest extends TestBase {
 
 @Test
     void practicefillformtest() {
-        /// strings
+
         String firstName = "Jovan";
         String lastName = "Savovich";
         String userMail = "kgb@jovan.ru";
         String userNumber = "4999886645";
         String currentAddress = "Leprosorium";
-        ///open form
     registrationPage.openPage()
-    ///fill form
+
                             .setFirstName(firstName)
                             .setFirstName(firstName)
                             .setLastName(lastName)
@@ -31,8 +30,7 @@ public class PracticeBoxWithObjectsTest extends TestBase {
                             .setCity("Jaipur")
                             .clickSubmit();
     registrationPage.setAdress(currentAddress);
-    /// hide overlay banners
-    /// Ура, а теперь выдача
+
     registrationPage.verifyModal()
             .verifyResult("Student Name",  firstName + " Savovich")
             .verifyResult("Student Email", userMail)

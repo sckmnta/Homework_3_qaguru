@@ -86,7 +86,7 @@ public class RegistrationPage {
         return this;
     }
     public RegistrationPage setHobby(String value) {
-        hobbiesInput.$(byText(value)).click(); //setValue(value).click(); не работает, прошу объяснить
+        hobbiesInput.$(byText(value)).click(); //setValue(value).click(); не работает почему то):
         return this;
     }
     public RegistrationPage setPicture() {
