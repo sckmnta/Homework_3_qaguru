@@ -9,7 +9,6 @@ public class PracticeBoxWithObjectsTest extends TestBase {
         String userNumber = "4999886645";
         String currentAddress = "Leprosorium";
     registrationPage.openPage()
-
                             .setFirstName(firstName)
                             .setFirstName(firstName)
                             .setLastName(lastName)
@@ -25,7 +24,6 @@ public class PracticeBoxWithObjectsTest extends TestBase {
                             .setCity("Jaipur")
                             .clickSubmit();
     registrationPage.setAdress(currentAddress);
-
     registrationPage.verifyModal()
             .verifyResult("Student Name",  firstName + " Savovich")
             .verifyResult("Student Email", userMail)
