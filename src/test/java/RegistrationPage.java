@@ -5,7 +5,6 @@ import pages.components.RegistrationModal;
 import java.io.File;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     RegistrationModal registrationModal = new RegistrationModal();
