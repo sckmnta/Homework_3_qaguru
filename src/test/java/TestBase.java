@@ -5,6 +5,7 @@ import pages.RegistrationPage;
 
 public class TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
+
     @BeforeAll
     static void beforeall() {
         Configuration.holdBrowserOpen = true;
@@ -13,8 +14,9 @@ public class TestBase {
         // Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";
     }
+
     @AfterAll
-    static void afterAll(){
+    static void afterAll() {
         Configuration.holdBrowserOpen = false;
     }
 
