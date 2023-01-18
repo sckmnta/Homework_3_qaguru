@@ -1,10 +1,11 @@
 package pages;
 import com.codeborne.selenide.SelenideElement;
-import pages.Components.CalendarComponent;
+import pages.components.CalendarComponent;
 import pages.components.RegistrationModal;
 import java.io.File;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+
 public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
     RegistrationModal registrationModal = new RegistrationModal();
@@ -17,8 +18,8 @@ public class RegistrationPage {
             genderInput = $x("//label[text()='Other']"),
             dateOfBirthInput = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
-            hobbiesInput =  $("#hobbiesWrapper"), //$x("//label[text()='Reading']"), не работает почему то):
-            uploadPicture =   $x("//input[@id='uploadPicture']"),
+            hobbiesInput = $("#hobbiesWrapper"), //$x("//label[text()='Reading']"), не работает почему то):
+            uploadPicture = $x("//input[@id='uploadPicture']"),
             stateInput = $("#react-select-3-input"),
             cityInput = $("#react-select-4-input"),
             submitClick = $(".btn-primary");
@@ -51,7 +52,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setAdress(String value) {
+    public RegistrationPage setAddress(String value) {
         adressInput.setValue(value);
         return this;
     }
@@ -81,27 +82,31 @@ public class RegistrationPage {
         subjectsInput.setValue(value).pressEnter();
         return this;
     }
+
     public RegistrationPage setHobby(String value) {
         hobbiesInput.$(byText(value)).click(); //setValue(value).click(); не работает почему то):
         return this;
     }
+
     public RegistrationPage setPicture() {
         uploadPicture.uploadFile(new File("src/test/resources/exmpl.jpg"));
         return this;
     }
+
     public RegistrationPage setState(String value) {
         stateInput.setValue(value).pressEnter();
         return this;
     }
+
     public RegistrationPage setCity(String value) {
         cityInput.setValue(value).pressEnter();
         return this;
     }
+
     public RegistrationPage clickSubmit() {
         submitClick.click();
         return this;
     }
-
 
 
 }
