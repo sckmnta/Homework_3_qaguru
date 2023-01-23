@@ -8,6 +8,6 @@ public class CalendarComponent {
         $(".react-datepicker__month-select").selectOption(month);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__day--0" + day +
-                ":not(.react-datepicker__day--outside-month)").click();
+                ":not(.react-datepicker__day--outside-month)").click(); //done
     }
 }
