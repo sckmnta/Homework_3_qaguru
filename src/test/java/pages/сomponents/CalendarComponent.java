@@ -1,4 +1,4 @@
-package pages.Components;
+package pages.сomponents;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -8,6 +8,6 @@ public class CalendarComponent {
         $(".react-datepicker__month-select").selectOption(month);
         $("#dateOfBirthInput").click();
         $(".react-datepicker__day--0" + day +
-                ":not(.react-datepicker__day--outside-month)").click(); //done
+                ":not(.react-datepicker__day--outside-month)").click();
     }
 }
