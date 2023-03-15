@@ -9,8 +9,10 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBoxTest {
     @BeforeAll
-    static void beforeAll(){
-        Configuration.browserSize = "1920*1080";}
+    static void beforeAll() {
+        Configuration.browserSize = "1920*1080";
+    }
+
     @Test
     void demoqaTest() {
         open("https://demoqa.com/text-box");

@@ -1,15 +1,13 @@
 import org.junit.jupiter.api.Test;
 
-public class PracticeBoxWithObjectsTest extends TestBase {
+public class PracticeBoxWithObjectsAndFakerTest extends TestBase {
+
+
 
     @Test
     void practicefillformtest() {
 
-        String firstName = "Jovan";
-        String lastName = "Savovich";
-        String userMail = "kgb@jovan.ru";
-        String userNumber = "4999886645";
-        String currentAddress = "Leprosorium";
+
         registrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
