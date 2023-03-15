@@ -13,7 +13,7 @@ public class PracticeBoxTest {
     @BeforeAll
     static void beforeall() {
         Configuration.holdBrowserOpen = true;
-        //Configuration.browser = "opera";
+        Configuration.browser = "Firefox";
         Configuration.browserSize = "1920x1080";
         // Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";
